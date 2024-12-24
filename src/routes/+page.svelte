@@ -1,115 +1,172 @@
 <script>
-  import ImageBanner from "$lib/ImageBanner.svelte";
-  import InfoBlock from "$lib/InfoBlock.svelte";
-  import InfoWithImageBlock from "$lib/InfoWithImageBlock.svelte";
+  import { InfoItem, Button, ImageBlock, Parallax } from "$lib/components";
+  import location from "$lib/assets/location.jpg";
+  import church from "$lib/assets/church.jpeg";
+  import { fadeInOnScroll } from "$lib/utils/fadeInScroll";
+  import gate from "$lib/assets/gate.png";
+  import food from "$lib/assets/food.png";
+  import rings from "$lib/assets/rings.png";
+  import hero from "$lib/assets/hero.jpg";
+  import museum from "$lib/assets/museum.png";
+  import airplane from "$lib/assets/airplane.png";
+  import gift from "$lib/assets/gift.png";
 
-  import hero1 from "../assets/hero1.jpg";
-  import mcbc1 from "../assets/mcbc1.jpeg";
-  import museum from "../assets/museum.png";
+  const events = [
+    {
+      time: "3:00pm",
+      icon: gate,
+      details:
+        "Doors open an hour early—enjoy drinks and snacks as we welcome you.",
+    },
+    {
+      time: "4:00pm",
+      icon: rings,
+      details: "A heartfelt union blessed with a short sermon.",
+    },
+    {
+      time: "5:00pm",
+      icon: food,
+      details: "Celebrate the beginning of our new chapter.",
+    },
+  ];
 
-  import IconMapMarker from "~icons/mdi/map-marker-outline";
-  import IconAirplane from "~icons/mdi/airplane";
-  import IconBedOutline from "~icons/mdi/bed-outline";
-  import IconCarOutline from "~icons/mdi/car-outline";
+  const infos = [
+    {
+      title: "Travel & Stay",
+      icon: airplane,
+      details:
+        "We have guests joining us from near and far. Find travel tips and accommodation suggestions here.",
+    },
+    {
+      title: "Gift Registry",
+      icon: gift,
+      details:
+        "For those who wish to bless us with a token of love, our registry can be found here.",
+    },
+  ];
 </script>
 
-<ImageBanner image={hero1}>
-  <div class="text-white text-center">
-    <div class="text-5xl font-medium">Isaias & Chalsea</div>
-    <div class="text-xl font-light">06.25.2025</div>
-    <br />
-    <button class="border border-white px-5 rounded-sm">RSVP</button>
-    <button class="border border-white px-5 rounded-sm">GIFT GIVING</button>
-  </div>
-</ImageBanner>
+<div class="text-center">
+  <!-- Hero -->
+  <Parallax image={hero} full>
+    <div class="text-white absolute">
+      <div class="text-xl font-light">06.25.2025</div>
+      <div class="text-4xl sm:text-5xl md:text-6xl font-medium my-2">
+        Isaias & Chalsea
+      </div>
+      <div class="text-xl font-light">Tagaytay, Cavite</div>
+    </div>
+  </Parallax>
 
-<InfoBlock title="LOCATION">
-  <IconMapMarker slot="icon"></IconMapMarker>
-  <div class="text-2xl">Aquila Crystal Palace, Tagaytay, Cavite</div>
-  <a href="#" class="text-xl underline font-semibold">See directions</a>
-</InfoBlock>
-
-<InfoBlock title="TRAVEL">
-  <IconAirplane slot="icon"></IconAirplane>
-  <div>
-    You will be flying into Ninoy Aquino International Airport (NAIA), either
-    Terminal 1 or Terminal 3, in Metro Manila.
-  </div>
-</InfoBlock>
-
-<InfoBlock title="COMMUTE">
-  <IconCarOutline slot="icon"></IconCarOutline>
-  <div>
-    If you're unfamiliar with the public transportation, we recommend using the
-    <span class="font-bold">Grab</span>
-    app for a more convenient ride from Metro Manila to Tagaytay (~2 hours).
-
-    <br /><br />
-    <span class="underline">Download</span> the app in advance to ensure a smoother
-    journey.
-  </div>
-</InfoBlock>
-
-<InfoBlock title="RECOMMENDED STAYS">
-  <IconBedOutline slot="icon"></IconBedOutline>
-
-  <div>
-    You can choose to stay in Metro Manila and commute on the day of the
-    wedding, or stay closer to the wedding venue in Tagaytay. Either way, here
-    are our recommended options.
-  </div>
-
-  <div class="flex justify-center">
-    <ul class="list-disc text-lg my-10 table">
-      <li>Taal Vista Hotel, Tagaytay (7.5km from venue)</li>
-      <li>Taal Vista Hotel, Tagaytay (7.5km from venue)</li>
-      <li>Taal Vista Hotel, Tagaytay (7.5km from venue)</li>
-    </ul>
-  </div>
-
-  <div>
-    We may be able to arrange overnight lodging after the wedding, especially
-    for our international guests. Please let us know if you're interested!
-  </div>
-</InfoBlock>
-
-<div class="flex flex-col items-center text-center my-10">
-  <!-- <IconBook class="text-5xl font-extralight my-2"></IconBook> -->
-  <div class="text-3xl my-4">Visit our Church!</div>
-</div>
-
-<InfoWithImageBlock image={mcbc1} reverse={false}>
-  <div>
-    If you're in Metro Manila on a Sunday, we invite you to visit Moonwalk
-    Community Bible Church in Parañaque. We'd love to have you join us for
-    worship and fellowship!
-  </div>
-
-  <a
-    href="https://www.google.com/"
-    class="text-xl underline font-semibold block mt-2 mb-4"
+  <!-- Verse -->
+  <div
+    class="my-20 flex items-center flex-col text-lg sm:text-xl"
+    use:fadeInOnScroll
   >
-    142-144 Neil Armstrong, Parañaque, 1709 Metro Manila, Philippines
-  </a>
+    <div class="w-full sm:w-3/4 lg:w-1/2">
+      The steadfast love of the Lord never ceases,
+      His mercies never come to an end, they are new every morning.
+      Great is thy faithfulness.
+    </div>
+    <div class="font-semibold my-5">Lamentations 3:22-23</div>
+  </div>
 
-  <div>Sunday School..............9am</div>
-  <div>Morning Worhip..........10:30am</div>
-  <div>Evening Worhip...........4:30pm</div>
-</InfoWithImageBlock>
+  <!-- Location -->
+  <div class="my-20" use:fadeInOnScroll>
+    <ImageBlock image={location}>
+      <div class="text-2xl">LOCATION</div>
+      <div class="text-xl my-10">
+        Our wedding will take place at the stunning
+        <strong>Aquila Crystal Palace</strong>, nestled in the picturesque city
+        of Tagaytay.
+        <br /><br />
+        The ceremony will begin at <strong>4:00 PM</strong>. Please arrive by
+        <strong>an hour early</strong>
+        to enjoy food and drinks as we welcome you.
+      </div>
+      <Button dark>RSVP</Button>
+    </ImageBlock>
+  </div>
 
-<!-- - sky ranch - Taal - napa -->
+  <!-- Map -->
+  <iframe
+    title="map"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7738.379775354378!2d120.95668887509714!3d14.124927786306978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd79dc7086fc39%3A0x56d9690c8ba530bb!2sAquila%20Crystal%20Palace%20Tagaytay!5e0!3m2!1sen!2sca!4v1734847372605!5m2!1sen!2sca"
+    width="100%"
+    height="400"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    use:fadeInOnScroll
+    class="my-20"
+  ></iframe>
 
-<!-- <div class="text-xl text-center my-20 w-1/2 mx-auto">
-  The steadfast love of the Lord never ceases. His mercies never come to an end.
-  They are new every morning.
-  <span class="font-bold">Great is Thy faithfulness.</span>
-  <div class="my-3">Lamentations 3:22-23</div>
-</div> -->
+  <!-- Schedule -->
+  <div class="my-20" use:fadeInOnScroll>
+    <div class="text-2xl">SCHEDULE</div>
+    <br /><br />
+    <div class="flex flex-col md:flex-row">
+      {#each events as event}
+        <div class="flex-1">
+          <InfoItem
+            icon={event.icon}
+            title={event.time}
+            details={event.details}
+          />
+        </div>
+      {/each}
+    </div>
+  </div>
 
-<style>
-  button:hover {
-    background-color: white;
-    color: black;
-    transition: 0.5s;
-  }
-</style>
+  <!-- Our Story -->
+  <div class="my-20" use:fadeInOnScroll>
+    <Parallax image={museum} gradient={50}>
+      <div
+        class="absolute text-white text-left sm:w-3/4 px-10 md:px-36 md:right-0 my-auto box-border text-xl"
+      >
+        <div class="text-3xl sm:text-5xl">Our Story</div>
+        <br />
+        <div>
+          From an unexpected meeting to a lifetime of memories, God's providence
+          guided our paths, shaping our lives to bring us together in His
+          perfect timing.
+        </div>
+        <br />
+        <button class="border border-black px-5 py-2 border-white"
+          >Read Our Story</button
+        >
+      </div>
+    </Parallax>
+  </div>
+
+  <div use:fadeInOnScroll class="my-20">
+    <ImageBlock image={church}>
+      <div class="text-2xl">Visit Our Church</div>
+      <br />
+      <div class="text-xl">
+        If you're in Metro Manila on a Sunday, we invite you to visit Moonwalk
+        Community Bible Church in Parañaque. We'd love to have you join us for
+        worship and fellowship!
+
+        <a class="my-5 block font-bold underline" href="/">See directions</a>
+
+        <div>Sunday School.......9am</div>
+        <div>Morning Worhip.......10:30am</div>
+        <div>Evening Worhip.......4:30pm</div>
+      </div>
+    </ImageBlock>
+  </div>
+
+  <div
+    use:fadeInOnScroll
+    class="my-20 flex flex-col md:flex-row w-full mx-auto lg:w-3/4"
+  >
+    {#each infos as info}
+      <div class="flex-1">
+        <InfoItem icon={info.icon} title={info.title} details={info.details} />
+      </div>
+    {/each}
+  </div>
+
+  <br />
+  <br />
+</div>
