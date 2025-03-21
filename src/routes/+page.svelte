@@ -1,15 +1,17 @@
 <script>
   import { InfoItem, Button, ImageBlock, Parallax } from "$lib/components";
-  import location from "$lib/assets/location.jpg";
-  import church from "$lib/assets/church.jpeg";
-  import { fadeInOnScroll } from "$lib/utils/fadeInScroll";
-  import gate from "$lib/assets/gate.png";
-  import food from "$lib/assets/food.png";
-  import rings from "$lib/assets/rings.png";
-  import hero from "$lib/assets/hero.jpg";
-  import museum from "$lib/assets/museum.png";
-  import airplane from "$lib/assets/airplane.png";
-  import gift from "$lib/assets/gift.png";
+  import { fadeInOnScroll } from "$lib/utils";
+  import {
+    location,
+    church,
+    gate,
+    food,
+    rings,
+    hero,
+    museum,
+    airplane,
+    gift,
+  } from "$lib/assets";
 
   const events = [
     {
@@ -48,7 +50,7 @@
 
 <div class="text-center">
   <!-- Hero -->
-  <Parallax image={hero} full>
+  <Parallax image={hero} full parallax>
     <div class="text-white absolute">
       <div class="text-xl font-light">06.25.2025</div>
       <div class="text-4xl sm:text-5xl md:text-6xl font-medium my-2">
@@ -119,7 +121,7 @@
 
   <!-- Our Story -->
   <div class="my-20" use:fadeInOnScroll>
-    <Parallax image={museum} gradient={50}>
+    <Parallax image={museum} gradient={50} position="left">
       <div
         class="absolute text-white text-left sm:w-3/4 px-10 md:px-36 md:right-0 my-auto box-border text-xl"
       >
@@ -138,6 +140,7 @@
     </Parallax>
   </div>
 
+  <!-- Our Church -->
   <div use:fadeInOnScroll class="my-20">
     <ImageBlock image={church}>
       <div class="text-2xl">Visit Our Church</div>
@@ -156,6 +159,7 @@
     </ImageBlock>
   </div>
 
+  <!-- More Info -->
   <div
     use:fadeInOnScroll
     class="my-20 flex flex-col md:flex-row w-full mx-auto lg:w-3/4"

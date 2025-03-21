@@ -8,7 +8,6 @@
     gradient?: number; // Intensity of gradient overlay (0-100)
     position?: "center" | "bottom" | "left"; // CSS object position (not used in <img>)
     multiplier?: number;
-    parallax?: boolean;
   }
 
   // Destructure props with default values
@@ -19,17 +18,13 @@
     gradient = 65,
     position = "center",
     multiplier = 0.5,
-    parallax = false,
   }: Props = $props();
 
-  const heightClass = full ? "h-screen" : "h-96";
-
+  const heightClass = full ? "h-screen" : "h-96"; // Height of the container
   let parallaxImage: HTMLElement; // Reference to the parallax image container
   let containerTop = 0; // Distance from the top of the document to the container
 
   const handleScroll = () => {
-    if (!parallax) return;
-
     const scrollPosition = window.scrollY;
     const viewportHeight = window.innerHeight;
 
@@ -39,82 +34,77 @@
       scrollPosition < containerTop + parallaxImage.offsetHeight
     ) {
       const offset = scrollPosition - containerTop;
-
-      // Adjust the top property of the image for parallax effect
-      parallaxImage.style.top = `${offset * -multiplier}px`; // Adjust multiplier for effect intensity
+      parallaxImage.style.transform = `translate3d(0, ${offset * -0.5}px, 0)`; // Adjust multiplier for effect intensity
     }
   };
 
-  let scaleFactor = $state<number>(2);
+  const scaleImage = () => {
+    const container = parallaxImage;
+    const scrollRange = container.scrollHeight - container.clientHeight;
 
-  const scale = () => {
-    if (!parallax) {
-      scaleFactor = 1;
-      return;
-    }
-
-    const width = window.innerWidth;
-
-    if (width >= 1000) {
-      scaleFactor = 1;
-      return;
-    }
-
-    if (width >= 700) {
-      scaleFactor = 1.5;
-      return;
-    }
-
-    scaleFactor = 2;
+    const T = scrollRange * Math.abs(multiplier);
+    const H_scaled = displayHeight + T;
+    return H_scaled / imageHeight;
   };
 
   onMount(() => {
     if (parallaxImage?.parentElement) {
       containerTop = parallaxImage.parentElement.offsetTop; // Calculate container's position
     }
-
-    handleScroll();
     window.addEventListener("scroll", handleScroll);
-
-    // Scale image
-    scale();
-    window.addEventListener("resize", scale);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", scale);
     };
+  });
+
+  let displayWidth = $state(0);
+  let displayHeight = $state(0);
+  let imageHeight = $state(0);
+
+  let translation = $derived.by(() => {
+    return (imageHeight - displayHeight) / 2;
+  });
+
+  let scale = $derived.by(() => {
+    const container = parallaxImage;
+
+    if (!container) return;
+
+    const scrollRange = container.scrollHeight - container.clientHeight;
+
+    const T = scrollRange * Math.abs(multiplier);
+    const H_scaled = displayHeight + T;
+    return H_scaled / imageHeight;
   });
 </script>
 
 <div
-  class="overflow-hidden relative flex justify-center items-center {heightClass}"
+  class="{heightClass} overflow-hidden relative flex justify-center items-center border border-black"
 >
   <!-- Parallax Image Layer -->
   <div
-    class="absolute top-0 left-0 w-full h-full border border-red-500"
-    bind:this={parallaxImage}
-    style="transform: scale({scaleFactor})"
+    class="absolute top-0 left-0 w-full h-full grayscale"
+    bind:offsetHeight={displayHeight}
+    bind:offsetWidth={displayWidth}
   >
-    <img alt="hero" src={image} />
+    <img
+      alt="hero"
+      src={image}
+      bind:offsetHeight={imageHeight}
+      style="transform: translateY({-translation}px) scale({scale});"
+    />
   </div>
 
   <!-- Gradient Overlay -->
   <div
     class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/{gradient.toString()} to-transparent"
-  ></div>
+  >
+    {translation}
+  </div>
 
   <!-- Slot Content -->
   {#if children}
     {@render children()}
   {/if}
 </div>
-
-<style>
-  img {
-    position: absolute; /* Ensures the image is positioned relative to its container */
-    height: 100%;
-    left: 0;
-    object-fit: cover; /* Ensures the image scales properly within the container */
-  }
-</style>

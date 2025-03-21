@@ -1,0 +1,9 @@
+export { default as location } from "$lib/assets/location.jpg";
+export { default as church } from "$lib/assets/church.jpeg";
+export { default as gate } from "$lib/assets/gate.png";
+export { default as food } from "$lib/assets/food.png";
+export { default as rings } from "$lib/assets/rings.png";
+export { default as hero } from "$lib/assets/hero.jpg";
+export { default as museum } from "$lib/assets/museum.png";
+export { default as airplane } from "$lib/assets/airplane.png";
+export { default as gift } from "$lib/assets/gift.png";
