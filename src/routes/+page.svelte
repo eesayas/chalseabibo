@@ -11,7 +11,8 @@
   <!-- Hero -->
   <FadeIn fluid>
     <Jumbotron
-      image="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742661888/hero_dazbh9.jpg"
+      src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742661888/hero_dazbh9.jpg"
+      type="image"
       parallax
     >
       <div class="text-white text-center">
@@ -64,22 +65,21 @@
   <FadeIn fluid>
     <Jumbotron
       height={400}
-      image="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742659134/museum_mbvtzr.png"
+      type="video"
+      src="https://res.cloudinary.com/dzuwr9eug/video/upload/v1742667540/My_Movie_5_jugbfw.mp4"
     >
       <div
-        class="text-white text-left sm:w-3/4 px-10 md:px-36 md:right-0 my-auto box-border text-xl"
+        class="text-white text-center sm:w-3/4 px-10 md:px-36 md:right-0 my-auto box-border text-xl"
       >
-        <div class="text-3xl sm:text-5xl">Our Story</div>
+        <div class="text-5xl">Our Story</div>
         <br />
-        <div>
+        <p>
           From an unexpected meeting to a persevering love, God's providence
           guided our paths, shaping our lives to bring us together in His
           perfect timing.
-        </div>
+        </p>
         <br />
-        <button class="border border-black px-5 py-2 border-white"
-          >Read Our Story</button
-        >
+        <Button>READ OUR STORY</Button>
       </div>
     </Jumbotron>
   </FadeIn>
@@ -106,7 +106,8 @@
 
   <FadeIn fluid>
     <Jumbotron
-      image="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742658178/iStock-1474946774_ryipiy.png"
+      type="image"
+      src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742658178/iStock-1474946774_ryipiy.png"
       height={400}
     >
       <div class="text-white text-center">

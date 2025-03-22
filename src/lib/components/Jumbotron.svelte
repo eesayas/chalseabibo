@@ -1,11 +1,14 @@
 <script lang="ts">
   import { onMount, type Snippet } from "svelte";
+  import Image from "./Image.svelte";
 
   interface Props {
     /**
      * The background image
      */
-    image: string;
+    src: string;
+
+    type: "image" | "video";
 
     /**
      * Any element to be shown inside Jumbotron
@@ -21,7 +24,7 @@
     height?: number;
   }
 
-  let { image, children, parallax, height }: Props = $props();
+  let { src, type, children, parallax, height }: Props = $props();
 
   let yOffset = $state(0);
 
@@ -45,7 +48,23 @@
     class="h-full w-full grayscale"
     style="transform: translateY({yOffset}px); transition: transform 0.1s;"
   >
-    <img src={image} alt="hero" class="object-cover h-full w-full" />
+    {#if type === "video"}
+      <video
+        muted
+        autoplay
+        playsinline
+        class="min-w-full min-h-full object-cover"
+      >
+        <source
+          src="https://res.cloudinary.com/dzuwr9eug/video/upload/v1742667540/My_Movie_5_jugbfw.mp4"
+        />
+        <track kind="captions" />
+      </video>
+    {/if}
+
+    {#if type === "image"}
+      <Image {src} class="object-cover h-full w-full" />
+    {/if}
   </div>
 
   <!-- Gradient Overlay -->
