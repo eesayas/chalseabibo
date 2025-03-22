@@ -8,9 +8,9 @@
   <a class="text-5xl" href="/">I&C</a>
 
   <div class="gap-5 md:gap-10 lg:gap-20 hidden sm:flex">
+    <a class="cursor-pointer" href="/">Home</a>
     <a class="cursor-pointer" href="/our-story">Our Story</a>
-    <div class="cursor-pointer">Travel & Stay</div>
-    <div class="cursor-pointer">Registry</div>
+    <div class="cursor-pointer">Gift</div>
   </div>
 
   <div class="hidden sm:flex">
