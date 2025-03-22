@@ -1,7 +1,8 @@
-export const fadeInOnScroll = (
+const fadeInOnScroll = (
   node: HTMLElement,
   { threshold = 0.2, duration = 1000 } = {},
 ) => {
+  console.log("he", node);
   // Apply initial styles
   node.style.opacity = "0";
   node.style.transition = `opacity ${duration}ms`;
@@ -27,3 +28,5 @@ export const fadeInOnScroll = (
     },
   };
 };
+
+export default fadeInOnScroll;
