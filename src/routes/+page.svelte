@@ -79,7 +79,7 @@
           perfect timing.
         </p>
         <br />
-        <Button>READ OUR STORY</Button>
+        <Button to="/our-story">READ OUR STORY</Button>
       </div>
     </Jumbotron>
   </FadeIn>
