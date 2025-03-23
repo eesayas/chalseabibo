@@ -39,7 +39,7 @@
     },
     {
       image:
-        "https://res.cloudinary.com/dzuwr9eug/image/upload/v1742676682/propsal_mc62tb.gif",
+        "https://res.cloudinary.com/dzuwr9eug/image/upload/v1742689068/relationship_icioue.gif",
       title: "February 21, 2024",
       details: "We became officially in a relationship.",
       aspect: "square",
@@ -149,8 +149,8 @@
         class="w-5/6 sm:w-1/3"
         aspect="square"
       />
-      <div class="text-3xl mt-8">June 25, 2025</div>
-      <p class="text-xl mt-5 text-center">Our wedding.</p>
+      <div class="text-3xl mt-6">June 25, 2025</div>
+      <p class="text-xl mt-1 text-center">Our wedding.</p>
     </div>
   </FadeIn>
 </div>

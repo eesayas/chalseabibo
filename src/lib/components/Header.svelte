@@ -1,5 +1,6 @@
 <script>
   import Button from "./Button.svelte";
+  import Sidebar from "./Sidebar.svelte";
 </script>
 
 <div
@@ -13,7 +14,9 @@
     <div class="cursor-pointer">Gift</div>
   </div>
 
-  <div class="hidden sm:flex">
+  <div class="hidden sm:block">
     <Button>RSVP</Button>
   </div>
+
+  <Sidebar />
 </div>
