@@ -5,18 +5,20 @@
 </script>
 
 <div>
-  <Jumbotron
-    src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742659134/museum_mbvtzr.png"
-    type="image"
-    height={500}
-    parallax
-  >
-    <div class="text-white text-center">
-      <div class="text-4xl sm:text-5xl md:text-6xl font-medium my-2">
-        Our Story
+  <FadeIn fluid>
+    <Jumbotron
+      src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742659134/museum_mbvtzr.png"
+      type="image"
+      height={500}
+      parallax
+    >
+      <div class="text-white text-center">
+        <div class="text-4xl sm:text-5xl md:text-6xl font-medium my-2">
+          Our Story
+        </div>
       </div>
-    </div>
-  </Jumbotron>
+    </Jumbotron>
+  </FadeIn>
 
   <Timeline />
 
