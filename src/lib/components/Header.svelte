@@ -15,7 +15,7 @@
   </div>
 
   <div class="hidden sm:block">
-    <Button>RSVP</Button>
+    <Button to="/rsvp">RSVP</Button>
   </div>
 
   <Sidebar />
