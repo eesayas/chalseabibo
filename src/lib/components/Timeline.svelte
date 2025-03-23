@@ -27,7 +27,7 @@
       image:
         "https://res.cloudinary.com/dzuwr9eug/image/upload/v1742675717/ldr_1_scwy4x.png",
       details:
-        "We continued talking to each hoping for a time we can see each other again.",
+        "We continued talking hoping for a time we can see each other again.",
     },
     {
       image:
@@ -76,6 +76,11 @@
       title: "August 10, 2024",
       details: "Back where it all started. From year 1 to a lifetime.",
       aspect: "square",
+    },
+    {
+      image:
+        "https://res.cloudinary.com/dzuwr9eug/image/upload/v1742741955/IMG_7074_xgmhav.png",
+      details: "The Pamamanhikan at Ilang Ilang 🍽️",
     },
     {
       image:

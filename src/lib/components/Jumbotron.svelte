@@ -53,6 +53,7 @@
         muted
         autoplay
         playsinline
+        loop
         class="min-w-full min-h-full object-cover"
       >
         <source
