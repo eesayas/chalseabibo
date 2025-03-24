@@ -2,21 +2,43 @@
   import type { Snippet } from "svelte";
 
   interface Props {
-    dark?: boolean;
     children?: Snippet;
+    class?: string;
+    onClick?: () => void;
+
+    color?: "black" | "white";
     to?: string;
+    fullWidth?: boolean;
+    small?: boolean;
+    active?: boolean;
+    hidden?: boolean;
   }
 
-  const { dark = false, children, to }: Props = $props();
-  const color = dark ? "black" : "white";
-  const inverted = dark ? "white" : "black";
+  let props: Props = $props();
+  let { color = "white", children, small, onClick } = props;
 </script>
 
-<a
-  class="px-10 py-2 text-lg border border-{color} text-{color} hover:bg-{color} hover:text-{inverted} duration-300"
-  href={to || "#"}
+<button
+  class={"border text-lg w-fit duration-300" + (props.class || "")}
+  class:px-10={!small}
+  class:py-2={!small}
+  class:text-lg={!small}
+  class:px-4={small}
+  class:py-0={small}
+  class:text-base={small}
+  class:border-black={color === "black"}
+  class:border-white={color === "white"}
+  class:bg-black={color === "black" && props.active}
+  class:bg-white={color === "white" && props.active}
+  class:text-black={color === "black" || (color === "white" && props.active)}
+  class:text-white={color === "white" || (color === "black" && props.active)}
+  class:hover:bg-black={color === "black"}
+  class:hover:bg-white={color === "white"}
+  class:hover:text-white={color === "black"}
+  class:hover:text-black={color === "white"}
+  onclick={onClick}
 >
   {#if children}
     {@render children()}
   {/if}
-</a>
+</button>
