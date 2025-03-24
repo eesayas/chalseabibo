@@ -1,5 +1,5 @@
 <div class="text-center py-10">
-  <div class="text-6xl">I&C</div>
+  <a class="text-5xl" href="/">I&C</a>
   <div class="text-xl">06.25.2025</div>
   <br />
   <div>

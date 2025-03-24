@@ -130,7 +130,7 @@
 
       <br />
 
-      <Button>SEE OPTIONS</Button>
+      <Button to="/gift">SEE OPTIONS</Button>
     </div>
   </Jumbotron>
 </FadeIn>

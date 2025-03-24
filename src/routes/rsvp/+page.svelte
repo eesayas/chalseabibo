@@ -148,7 +148,7 @@
 
 <FadeIn fluid>
   <Jumbotron
-    src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742848846/IMG_7699_cbuyco.jpg"
+    src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742851412/unnamed_clvh6x.jpg"
     type="image"
     height={450}
   >

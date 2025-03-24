@@ -11,7 +11,7 @@
   <div class="gap-5 md:gap-10 lg:gap-20 hidden sm:flex">
     <a class="cursor-pointer" href="/">Home</a>
     <a class="cursor-pointer" href="/our-story">Our Story</a>
-    <div class="cursor-pointer">Gift</div>
+    <a class="cursor-pointer" href="/gift">Gift</a>
   </div>
 
   <div class="hidden sm:block">
