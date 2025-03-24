@@ -18,6 +18,13 @@
     {
       time: "5:00pm",
       image:
+        "https://res.cloudinary.com/dzuwr9eug/image/upload/v1742853385/Frame_1_flqqvx.png",
+      details:
+        "Enjoy snacks, refreshments, and a time of fellowship before we begin the reception.",
+    },
+    {
+      time: "6:00pm",
+      image:
         "https://res.cloudinary.com/dzuwr9eug/image/upload/v1742662805/food_tzcdu6.png",
       details: "Celebrate the beginning of our new chapter.",
     },
