@@ -25,6 +25,13 @@
         <Button to="/rsvp">RSVP</Button>
       </div>
     </div>
+
+    <div class="text-lg absolute bottom-20 text-center text-white">
+      <FadeIn fluid>
+        <div class="leading-none">Scroll Down</div>
+        <div class="leading-none">⌄</div>
+      </FadeIn>
+    </div>
   </Jumbotron>
 </FadeIn>
 

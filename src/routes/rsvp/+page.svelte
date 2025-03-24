@@ -150,14 +150,14 @@
   <Jumbotron
     src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742848846/IMG_7699_cbuyco.jpg"
     type="image"
-    height={360}
+    height={450}
   >
     <div class="text-white text-center">
       <div class="text-5xl font-medium my-2">Location</div>
 
       <p class="text-xl w-3/4 mx-auto">
-        Our wedding will take place at the stunning
-        <strong>Aquila Crystal Palace</strong>, in Tagaytay city.
+        Our wedding will take place at <strong>Aquila Crystal Palace</strong>,
+        in Tagaytay city.
         <br /><br />
         The ceremony will begin at <strong>4:00 PM</strong>. Please arrive by
         <strong>an hour early</strong>
