@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@googleapis/sheets':
+        specifier: ^9.6.0
+        version: 9.6.0
       cors:
         specifier: ^2.8.5
         version: 2.8.5
@@ -17,9 +20,9 @@ importers:
       express:
         specifier: ^4.21.2
         version: 4.21.2
-      googleapis:
-        specifier: ^148.0.0
-        version: 148.0.0
+      google-auth-library:
+        specifier: ^9.15.1
+        version: 9.15.1
     devDependencies:
       '@iconify-json/mdi':
         specifier: ^1.2.1
@@ -211,6 +214,10 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@googleapis/sheets@9.6.0':
+    resolution: {integrity: sha512-nppWh4ckXxvnFf1ILfaDO6fdoK1aMDzr8DWbb1x9dtx61dgiX7aQrDeZ9QICa+tDsFeWI6WSsS6lGFJkBgoRjQ==}
+    engines: {node: '>=12.0.0'}
 
   '@iconify-json/mdi@1.2.1':
     resolution: {integrity: sha512-dSkQU78gsZV6Yxnq78+LuX7jzeFC/5NAmz7O3rh558GimGFcwMVY/OtqRowIzjqJBmMmWZft7wkFV4TrwRXjlg==}
@@ -819,10 +826,6 @@ packages:
 
   googleapis-common@7.2.0:
     resolution: {integrity: sha512-/fhDZEJZvOV3X5jmD+fKxMqma5q2Q9nZNSF3kn1F18tpxmA86BcTxAGBQdM0N89Z3bEaIs+HVznSmFJEAmMTjA==}
-    engines: {node: '>=14.0.0'}
-
-  googleapis@148.0.0:
-    resolution: {integrity: sha512-8PDG5VItm6E1TdZWDqtRrUJSlBcNwz0/MwCa6AL81y/RxPGXJRUwKqGZfCoVX1ZBbfr3I4NkDxBmeTyOAZSWqw==}
     engines: {node: '>=14.0.0'}
 
   gopd@1.2.0:
@@ -1585,6 +1588,13 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
+  '@googleapis/sheets@9.6.0':
+    dependencies:
+      googleapis-common: 7.2.0
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+
   '@iconify-json/mdi@1.2.1':
     dependencies:
       '@iconify/types': 2.0.0
@@ -2229,14 +2239,6 @@ snapshots:
       qs: 6.13.0
       url-template: 2.0.8
       uuid: 9.0.1
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
-
-  googleapis@148.0.0:
-    dependencies:
-      google-auth-library: 9.15.1
-      googleapis-common: 7.2.0
     transitivePeerDependencies:
       - encoding
       - supports-color

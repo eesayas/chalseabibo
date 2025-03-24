@@ -1,6 +1,7 @@
 import { handler } from "./build/handler.js";
 import express from "express";
-import { google } from "googleapis";
+import { sheets as GoogleSheets } from "@googleapis/sheets";
+import { GoogleAuth } from "google-auth-library";
 import "dotenv/config";
 import cors from "cors";
 
@@ -11,7 +12,7 @@ const camelCase = (str) =>
     .replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ""))
     .replace(/^([A-Z])/, (m) => m.toLowerCase());
 
-const auth = new google.auth.GoogleAuth({
+const auth = new GoogleAuth({
   keyFile: "./google.json",
   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
 });
@@ -22,7 +23,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/api/rsvp", async (_, res) => {
-  const sheets = google.sheets({ version: "v4", auth });
+  const sheets = GoogleSheets({ version: "v4", auth });
   const range = "Invitations!A2:C9999"; // C9999 is arbitrary
 
   try {
@@ -54,7 +55,7 @@ app.get("/api/rsvp", async (_, res) => {
 
 // Update rsvp data
 app.patch("/api/rsvp", async (req, res) => {
-  const sheets = google.sheets({ version: "v4", auth });
+  const sheets = GoogleSheets({ version: "v4", auth });
   const guests = req.body;
 
   const data = guests.map((guest) => {
