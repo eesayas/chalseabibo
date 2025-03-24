@@ -22,8 +22,8 @@
   onclick={onClick}
   href={to}
   type="button"
-  class={"border text-lg w-fit duration-300 cursor-pointer" +
-    (props.class || "")}
+  class={(props.class || "") +
+    "border text-lg w-fit duration-300 cursor-pointer select-none"}
   class:px-10={!small}
   class:py-2={!small}
   class:text-lg={!small}

@@ -119,7 +119,9 @@
         placeholder={`Guest Name ${index + 1}`}
         bind:value={guest.name}
       />
-      <div class="absolute right-2 top-1/3 transform -translate-y-1/3">
+      <div
+        class="absolute right-2 top-1/3 transform -translate-y-1/3 p-3 select-none"
+      >
         <Button
           color="black"
           small
@@ -146,21 +148,25 @@
 
 <FadeIn fluid>
   <Jumbotron
+    src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742848846/IMG_7699_cbuyco.jpg"
     type="image"
-    src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742658178/iStock-1474946774_ryipiy.png"
-    height={400}
+    height={360}
   >
     <div class="text-white text-center">
-      <div class="text-5xl font-medium my-2">Gift</div>
+      <div class="text-5xl font-medium my-2">Location</div>
 
       <p class="text-xl w-3/4 mx-auto">
-        If you'd like to celebrate our new journey with a gift, we've provided
-        options here.
+        Our wedding will take place at the stunning
+        <strong>Aquila Crystal Palace</strong>, in Tagaytay city.
+        <br /><br />
+        The ceremony will begin at <strong>4:00 PM</strong>. Please arrive by
+        <strong>an hour early</strong>
+        to enjoy food and drinks as we welcome you.
       </p>
 
       <br />
 
-      <Button>SEE OPTIONS</Button>
+      <Button to="/">Learn More</Button>
     </div>
   </Jumbotron>
 </FadeIn>
