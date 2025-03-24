@@ -15,11 +15,15 @@
   }
 
   let props: Props = $props();
-  let { color = "white", children, small, onClick } = props;
+  let { color = "white", children, small, to, onClick } = props;
 </script>
 
-<button
-  class={"border text-lg w-fit duration-300" + (props.class || "")}
+<a
+  onclick={onClick}
+  href={to}
+  type="button"
+  class={"border text-lg w-fit duration-300 cursor-pointer" +
+    (props.class || "")}
   class:px-10={!small}
   class:py-2={!small}
   class:text-lg={!small}
@@ -36,9 +40,8 @@
   class:hover:bg-white={color === "white"}
   class:hover:text-white={color === "black"}
   class:hover:text-black={color === "white"}
-  onclick={onClick}
 >
   {#if children}
     {@render children()}
   {/if}
-</button>
+</a>

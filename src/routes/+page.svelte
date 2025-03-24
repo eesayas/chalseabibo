@@ -21,6 +21,8 @@
           Isaias & Chalsea
         </div>
         <div class="text-xl font-light">Tagaytay, Cavite</div>
+        <br />
+        <Button to="/rsvp">RSVP</Button>
       </div>
     </Jumbotron>
   </FadeIn>
@@ -52,7 +54,7 @@
         <strong>an hour early</strong>
         to enjoy food and drinks as we welcome you.
       </div>
-      <Button dark>RSVP</Button>
+      <Button color="black" to="/rsvp">RSVP</Button>
     </Highlight>
   </FadeIn>
 

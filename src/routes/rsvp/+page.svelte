@@ -16,7 +16,7 @@
 
   onMount(async () => {
     try {
-      const response = await fetch("http://localhost:3017/api/rsvp");
+      const response = await fetch("/api/rsvp");
       rsvps = await response.json();
     } catch (error) {
       console.error("error", error);
@@ -30,7 +30,7 @@
   const search = debounce(() => {
     // Find invitation
     const invitation = rsvps.find(
-      (rsvp) => rsvp.name.toLowerCase() === name.toLowerCase(),
+      (rsvp) => rsvp.name.toLowerCase().trim() === name.toLowerCase().trim(),
     );
 
     // Retrieve other guests in the same invitation
@@ -49,7 +49,7 @@
 
   const submit = async () => {
     try {
-      await fetch("http://localhost:3017/api/rsvp", {
+      await fetch("/api/rsvp", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +70,7 @@
   <Jumbotron
     src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742683766/IMG_7433_ov8fje.png"
     type="image"
-    height={500}
+    height={360}
     parallax
   >
     <div class="text-white text-center">
@@ -80,8 +80,8 @@
 </FadeIn>
 
 <FadeIn>
-  <div class="flex flex-col w-1/2 mx-auto">
-    <div class="text-center text-2xl">
+  <div class="flex flex-col w-full sm:w-1/2 mx-auto">
+    <div class="text-center text-xl">
       Kindly, type your full name or a member of your group
     </div>
     <br />
@@ -96,16 +96,18 @@
     />
   </div>
 
-  <div class="text-center text-xl mt-2 w-1/2 mx-auto text-gray-500 italic">
+  <div
+    class="text-center text-xl mt-2 w-full sm:w-1/2 mx-auto text-gray-500 italic"
+  >
     {status}
   </div>
 </FadeIn>
 
 <div
-  class="flex flex-col w-1/2 mx-auto px-10 pb-20 justify-center items-center"
+  class="flex flex-col w-full sm:w-1/2 mx-auto px-1 pb-20 justify-center items-center"
   class:hidden={!guests.length}
 >
-  <div class="text-center text-2xl">
+  <div class="text-center text-xl">
     Please verify the names in your group and choose a response
   </div>
   <br />
