@@ -74,6 +74,7 @@
   >
     <div class="text-white text-center">
       <div class="text-4xl sm:text-5xl md:text-6xl font-medium my-2">RSVP</div>
+      <div class="text-xl">June 25, 2025 • Aquila Crystal Palace, Tagaytay</div>
     </div>
   </Jumbotron>
 </FadeIn>
@@ -81,7 +82,8 @@
 <FadeIn>
   <div class="flex flex-col w-full sm:w-1/2 mx-auto">
     <div class="text-center text-xl">
-      Kindly, type your full name or a member of your group
+      <strong>RSVP here!</strong> Kindly, type your full name or a member of your
+      group.
     </div>
     <br />
     <input
@@ -103,11 +105,11 @@
 </FadeIn>
 
 <div
-  class="flex flex-col w-full sm:w-1/2 mx-auto px-1 pb-20 justify-center items-center"
+  class="flex flex-col w-full sm:w-1/2 mx-auto px-3 pb-20 justify-center items-center"
   class:hidden={!guests.length}
 >
   <div class="text-center text-xl">
-    Please verify the names in your group and choose a response
+    Please verify the names in your group and choose a response.
   </div>
   <br />
 
@@ -144,6 +146,21 @@
   <br />
   <Button color="black" onClick={submit}>SUBMIT</Button>
 </div>
+
+<FadeIn class="bg-[#F9F9F9]">
+  <div class="flex items-center flex-col text-xl text-center">
+    <p class="w-full sm:w-3/4 lg:w-1/2">
+      We would love for you to celebrate our special day with us! But if you
+      can’t make it, we completely understand. You’re welcome to send us your
+      well wishes and words of encouragement at <strong
+        >chalseabibo@gmail.com</strong
+      >
+      😊
+      <br /><br />
+      - Bibo & Cha
+    </p>
+  </div>
+</FadeIn>
 
 <FadeIn fluid>
   <Jumbotron
