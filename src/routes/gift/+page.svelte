@@ -22,8 +22,7 @@
   <div class="flex items-center flex-col text-xl text-center">
     <p class="w-full sm:w-3/4 lg:w-1/2">
       If you’d like to give a gift, we kindly prefer monetary contributions to
-      help us build our future together. However, if you wish to give a
-      different type of gift, you’re welcome to bring it on our wedding day ❤️
+      help us build our future together ❤️
       <br /><br />
       - Bibo & Cha
     </p>
