@@ -10,7 +10,6 @@
     src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742658178/iStock-1474946774_ryipiy.png"
     type="image"
     height={350}
-    parallax
   >
     <div class="text-white text-center">
       <div class="text-4xl sm:text-5xl md:text-6xl font-medium my-2">Gift</div>

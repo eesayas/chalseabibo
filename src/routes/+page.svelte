@@ -12,7 +12,6 @@
   <Jumbotron
     src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742661888/hero_dazbh9.jpg"
     type="image"
-    parallax
   >
     <div class="text-white text-center">
       <div class="text-xl font-light">06.25.2025</div>

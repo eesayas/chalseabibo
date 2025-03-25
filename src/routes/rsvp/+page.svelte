@@ -71,7 +71,6 @@
     src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742683766/IMG_7433_ov8fje.png"
     type="image"
     height={360}
-    parallax
   >
     <div class="text-white text-center">
       <div class="text-4xl sm:text-5xl md:text-6xl font-medium my-2">RSVP</div>
