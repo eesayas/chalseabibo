@@ -75,7 +75,7 @@
   <Jumbotron
     height={400}
     type="video"
-    src="https://res.cloudinary.com/dzuwr9eug/video/upload/v1742667540/My_Movie_5_jugbfw.mp4"
+    src="https://res.cloudinary.com/dzuwr9eug/video/upload/v1742863277/movie_nvpm8t.mp4"
   >
     <div
       class="text-white text-center sm:w-3/4 px-10 md:px-36 md:right-0 my-auto box-border text-xl"

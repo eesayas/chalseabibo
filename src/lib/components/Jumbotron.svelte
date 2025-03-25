@@ -50,14 +50,16 @@
   >
     {#if type === "video"}
       <video
-        muted
         autoplay
+        muted
         playsinline
+        preload="auto"
         loop
         class="min-w-full min-h-full object-cover"
       >
         <source
-          src="https://res.cloudinary.com/dzuwr9eug/video/upload/v1742667540/My_Movie_5_jugbfw.mp4"
+          src="https://res.cloudinary.com/dzuwr9eug/video/upload/v1742863277/movie_nvpm8t.mp4"
+          type="video/mp4"
         />
         <track kind="captions" />
       </video>
