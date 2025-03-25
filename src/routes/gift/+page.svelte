@@ -1,6 +1,7 @@
 <script>
   import Button from "$lib/components/Button.svelte";
   import FadeIn from "$lib/components/FadeIn.svelte";
+  import Image from "$lib/components/Image.svelte";
 
   import Jumbotron from "$lib/components/Jumbotron.svelte";
 </script>
@@ -32,6 +33,26 @@
 <FadeIn>
   <div class="text-center text-xl">
     Here are a few options:
+
+    <div class="flex flex-col md:flex-row justify-center my-5 gap-20">
+      <div>
+        Via <strong>Gcash</strong>
+        <Image
+          src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742864527/gcash_dysjpp.jpg"
+          class="w-52 mx-auto"
+          aspect="square"
+        />
+      </div>
+      <div>
+        Via <strong>GoTyme</strong>
+        <Image
+          src="https://res.cloudinary.com/dzuwr9eug/image/upload/v1742864410/gotyme_e7df1u.jpg"
+          class="w-52 mx-auto"
+          aspect="square"
+        />
+      </div>
+    </div>
+
     <div class="my-2">
       Via <strong>E-transfer</strong>: chalseabibo@gmail.com
     </div>
