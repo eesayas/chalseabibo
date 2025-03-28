@@ -175,9 +175,9 @@
         Our wedding will take place at <strong>Aquila Crystal Palace</strong>,
         in Tagaytay city.
         <br /><br />
-        The ceremony will begin at <strong>4:00 PM</strong>. Please arrive by
-        <strong>an hour early</strong>
-        to enjoy food and drinks as we welcome you.
+        The ceremony will begin at <strong>4:00 PM</strong>. Doors open
+        <strong>an hour early</strong>. Please be there by
+        <strong>3:30pm</strong>.
       </p>
 
       <br />

@@ -7,13 +7,13 @@
       image:
         "https://res.cloudinary.com/dzuwr9eug/image/upload/v1742662804/gate_xtpgcj.png",
       details:
-        "Doors open an hour early—enjoy drinks and snacks as we welcome you.",
+        "Doors open an hour early. Please be there 30 minutes before the ceremony.",
     },
     {
       time: "4:00pm",
       image:
         "https://res.cloudinary.com/dzuwr9eug/image/upload/v1742662806/rings_kd5lyv.png",
-      details: "A heartfelt union blessed with a short sermon.",
+      details: "A heartfelt ceremony blessed with a short sermon.",
     },
     {
       time: "5:00pm",
