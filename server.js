@@ -59,11 +59,11 @@ app.patch("/api/rsvp", async (req, res) => {
   const guests = req.body;
 
   const data = guests.map((guest) => {
-    const { cell, group, name, response } = guest;
+    const { cell, group, name, response, timestamp } = guest;
 
     return {
       range: `Invitations!${cell}`,
-      values: [[group, name, response]],
+      values: [[group, name, response, timestamp]],
     };
   });
 

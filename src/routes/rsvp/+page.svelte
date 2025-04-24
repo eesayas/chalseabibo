@@ -10,6 +10,7 @@
     group: string;
     name: string;
     response: string;
+    timestamp?: string;
   }
 
   let rsvps: RSVP[] = $state([]);
@@ -46,7 +47,12 @@
   }, 1000);
 
   const setResponse = (idx: number, response: "YES" | "NO") => {
-    guests[idx] = { ...guests[idx], response };
+    const date = new Date();
+    guests[idx] = {
+      ...guests[idx],
+      response,
+      timestamp: date.toLocaleString(),
+    };
     guests = [...guests];
   };
 
