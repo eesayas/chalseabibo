@@ -28,6 +28,9 @@
   let status = $state("");
 
   const search = debounce(() => {
+    guests = [];
+    if (!name.trim().length) return;
+
     // Find invitation
     const invitation = rsvps.find(
       (rsvp) => rsvp.name.toLowerCase().trim() === name.toLowerCase().trim(),
